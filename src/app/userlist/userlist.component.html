@@ -1,0 +1,31 @@
+<div class="container bg-body-tertiary">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <br />
+    <h2>Users List</h2>
+    <br />
+
+    <app-userlistwrapper
+      [ClearSearch]="ClearSearch"
+      (handleSearchData)="handleReceiveData($event)"
+    ></app-userlistwrapper>
+
+    @for (user of users; track user.id) {
+    <div class="col">
+      <div class="card bg-light-subtle h-100">
+        <img [src]="user.image" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ user.username }}</h5>
+          @if (user.is_verified) {<i class="{{ tickicon }}"></i>}
+         
+          @else if(!user.is_verified) {<i class="{{ crossicon }}"></i>}
+          <p class="card-text">{{ user.email }}</p>
+          <p class="card-text">{{ user.phone }}</p>
+        </div>
+      </div>
+    </div>
+
+    } @empty {
+    <p>no users found</p>
+    }
+  </div>
+</div>

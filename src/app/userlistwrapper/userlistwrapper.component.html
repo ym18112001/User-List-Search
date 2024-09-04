@@ -1,0 +1,30 @@
+<div class="input-group mb-3">
+  <div class="input-group-append">
+    <span
+      class="input-group-text"
+      id="basic-addon1"
+      type="button"
+      (click)="ClearSearch(search)"
+      >Clear</span
+    >
+  </div>
+  <div class="input-group-append">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by Email"
+      aria-label="Search by Email"
+      aria-describedby="Search by Email"
+      #search
+    />
+  </div>
+  <div class="input-group-append">
+    <span
+      class="input-group-text"
+      id="basic-addon2"
+      type="button"
+      (click)="searchUser(search)"
+      >Search</span
+    >
+  </div>
+</div>
